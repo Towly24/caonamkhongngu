@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+	int n;
+	printf("Nhap n: ");
+	scanf("%d",&n);
+	char a[n][50];
+	for(int i=0;i<n;i++){
+		scanf("%s",a[i]);
+	}
+	char tmp[50];
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n-i-1;j++){
+			if(strcmp(a[j+1],a[j])<0){
+				strcpy(tmp, a[j+1]);
+				strcpy(a[j+1], a[j]);
+				strcpy(a[j], tmp);
+			}
+		}
+	}
+	for(int i=0;i<n;i++){
+		printf("%s\n",a[i]);
+	}
+}

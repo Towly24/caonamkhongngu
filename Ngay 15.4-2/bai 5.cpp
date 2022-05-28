@@ -12,10 +12,10 @@ int main(){
 	}
 	for(int i=0;i<n;i++){
 		for(int j=0;j<i;j++){
-			if(a[i]%2==1&&a[j]%2==1&&a[i]<a[j]){
-				temp=a[i];
-				a[i]=a[j];
-				a[j]=temp;
+			if(a[i]%2!=0&&a[j]%2!=0&&a[i]<a[j]){
+				temp=a[j];
+				a[j]=a[i];
+				a[i]=temp;
 			}
 		}
 	}
